@@ -26,9 +26,6 @@ ul {
   list-style: none;
 }
 
-ul {
-  list-style: none;
-}
 address {
   font-style: normal;
 }
@@ -333,6 +330,7 @@ body {
 }
 .flex-footer {
   display: flex;
+  justify-content: space-between;
 }
 
 .footer .logo {
@@ -367,7 +365,6 @@ body {
 }
 
 .social-footer {
-  margin-left: 70px;
   padding-top: 12px;
 }
 
@@ -407,9 +404,7 @@ body {
 
 .footer-form-flex {
   display: flex;
-  justify-content: center;
   gap: 12px;
-  margin-left: 93px;
 }
 .lable-footer {
   display: block;
@@ -432,6 +427,7 @@ body {
   padding: 0 0 0 16px;
   margin: 0;
   background-color: #2f303a;
+  color: var(--background-color);
 }
 
 .footer-submit-box {
@@ -593,7 +589,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 528px;
-  height: 581px;
+
   background-color: var(--background-color);
   box-shadow: 0px 1px 3px rgb(0 0 0 / 12%), 0px 1px 1px rgb(0 0 0 / 14%),
     0px 2px 1px rgb(0 0 0 / 20%);
@@ -611,11 +607,16 @@ body {
   border-radius: 100%;
   cursor: pointer;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  fill: #000000;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .close-modal:hover,
 .close-modal:focus {
-  color: var(--link-color);
+  fill: var(--link-color);
 }
 /*..........MODAL-FORM*...........*/
 
@@ -629,8 +630,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  margin-top: 12px;
 }
 
 .form-title {
@@ -640,19 +639,30 @@ body {
   letter-spacing: 0.03em;
   text-align: center;
   color: var(--brand-color);
-  margin-top: 40px;
+  padding-top: 40px;
+  margin-bottom: 10px;
 }
 
 .box-input {
   position: relative;
+  margin-bottom: 10px;
+}
+.box-input:nth-child(5) {
+  margin-bottom: 0;
+}
+.box-input:nth-child(6) {
+  padding-bottom: 40px;
+  margin-top: 30px;
+  margin-bottom: 0;
 }
 
-.box-input > label {
+.label {
   font-size: 12px;
   line-height: 1.16;
   letter-spacing: 0.01em;
   color: var(--text-color);
   display: block;
+  padding-bottom: 4px;
 }
 
 .input-icon {
@@ -667,7 +677,6 @@ body {
   height: 40px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
-  margin-top: 4px;
   padding-left: 42px;
 }
 
@@ -681,7 +690,6 @@ body {
   resize: none;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
-  margin-top: 4px;
   padding: 12px 16px;
 }
 
@@ -689,20 +697,15 @@ textarea::placeholder {
   color: rgba(33, 33, 33, 0.5);
 }
 
-.form-checkbox {
-  margin-top: 10px;
-}
-
 .checbox {
   appearance: none;
 }
 
 .lable-checbox {
-  position: relative;
   font-size: 14px;
   line-height: 1.7;
-  letter-spacing: 0.03em;
   color: var(--text-color);
+  display: block;
 }
 
 .lable-checbox::before {
@@ -714,7 +717,7 @@ textarea::placeholder {
   border: 2px solid #000;
   border-radius: 2px;
   left: -23px;
-  transform: translateX(50% -50%);
+  top: 50%;
 }
 .checbox:checked + .lable-checbox::before {
   background-color: var(--link-color);
@@ -725,7 +728,10 @@ textarea::placeholder {
 
 .link-form {
   color: var(--link-color);
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
 }
+
 
 .submit-input-modal {
   width: 200px;
@@ -740,9 +746,10 @@ textarea::placeholder {
   background: var(--link-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
+  padding: 0;
   border-style: none;
   cursor: pointer;
-  margin-top: 30px;
+  
 }
 
 .box-input:focus-within {
